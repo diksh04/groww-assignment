@@ -6,7 +6,7 @@ import { BiSolidDownArrow } from "react-icons/bi";
 import NavBar from "../components/NavBar";
 const url = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=`;
 const apikey = `&apikey=9L3KOTE41H6TZS5Z`;
-const productSlug = () => {
+const Slug = () => {
   const router = useRouter();
   //   const companyName = router.query.slug;
   //   console.log(companyName);
@@ -145,4 +145,4 @@ const productSlug = () => {
   );
 };
 
-export default productSlug;
+export default Slug;
