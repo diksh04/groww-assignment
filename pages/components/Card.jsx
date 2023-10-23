@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { BiSolidUpArrow } from "react-icons/bi";
 import { BiSolidDownArrow } from "react-icons/bi";
 
@@ -8,9 +9,12 @@ const Card = ({ image, title, shareprice, shareIncDec }) => {
     <Link href={`/product/${title}`}>
       <div className="shadow-xl m-5 w-60 p-3 rounded hover:scale-95 flex flex-col hover:cursor-pointer h-[370px]">
         <div className="h-[70%]">
-          <img
+          <Image
+            loader={() => image}
             src={image}
             alt="logo"
+            width={300}
+            height={300}
             className="rounded-lg object-contain bg-white grow"
           />
         </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { BiSolidDownArrow } from "react-icons/bi";
 import NavBar from "../components/NavBar";
+import Image from "next/image";
 const url = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=`;
 const apikey = `&apikey=9L3KOTE41H6TZS5Z`;
 const Slug = () => {
@@ -32,7 +33,7 @@ const Slug = () => {
       setName(router.query.slug);
       handleFetchData(router.query.slug);
     }
-  }, [router.isReady]);
+  }, [router.isReady, router.query.slug]);
   const currentPrice = (+items["52WeekLow"] + +items["52WeekHigh"]) / 2;
   console.log(currentPrice);
   return (
@@ -40,9 +41,13 @@ const Slug = () => {
       <NavBar />
       <div className="mt-12 mx-20  ">
         <div className="flex align-middle border-2 rounded-lg  p-3">
-          <img
+          <Image
+            loader={() =>
+              "https://logovtor.com/wp-content/uploads/2021/03/grow-com-logo-vector.png"
+            }
             src="https://logovtor.com/wp-content/uploads/2021/03/grow-com-logo-vector.png"
             className="w-[13%]  p-4  flex justify-center align-middle mr-10"
+            alt="grow logo"
           />
           <div className="w-[60%] mt-4 mr-10 p-3">
             <div className="font-bold">{name}</div>
@@ -90,7 +95,10 @@ const Slug = () => {
               </div>
             </div>
             <div className="flex flex-col text-center justify-between w-[70%]">
-              <div>Current price: {currentPrice >= 0 ? `$${currentPrice}` : "not known"}</div>
+              <div>
+                Current price:{" "}
+                {currentPrice >= 0 ? `$${currentPrice}` : "not known"}
+              </div>
               <div className="flex justify-center">
                 <BiSolidDownArrow />
               </div>
