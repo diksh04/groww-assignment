@@ -47,7 +47,9 @@ const Slug = () => {
             }
             src="https://logovtor.com/wp-content/uploads/2021/03/grow-com-logo-vector.png"
             className="w-[13%]  p-4  flex justify-center align-middle mr-10"
-            alt="grow logo"
+            width={300}
+            height={300}
+            alt="grow_logo"
           />
           <div className="w-[60%] mt-4 mr-10 p-3">
             <div className="font-bold">{name}</div>

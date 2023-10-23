@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
-import { SearchResultsList } from "./SearchResultList";
+import SearchResultsList from "./SearchResultList";
 const Search = () => {
   const [results, setResults] = useState([]);
 

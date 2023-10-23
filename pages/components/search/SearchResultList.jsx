@@ -1,6 +1,6 @@
-import { SearchResult } from "./SearchResult";
+import SearchResult from "./SearchResult";
 
-export const SearchResultsList = ({ results }) => {
+const SearchResultsList = ({ results }) => {
   //   console.log(results);
   //   console.log("hello");
   return (
@@ -8,16 +8,18 @@ export const SearchResultsList = ({ results }) => {
       <div className=" px-4 py-2 text-white bg-amber-700 rounded-lg  border-2 font-bold">
         Searched Results....
       </div>
-      {results.map((result) => {
+      {results && results.map((result) => {
         console.log(result["2. name"]);
         return (
           <SearchResult
             name={result["2. name"]}
             symbol={result["1. symbol"]}
-            key={result.symbol}
+            key={result["1. symbol"]}
           />
         );
       })}
     </div>
   );
 };
+
+export default SearchResultsList;

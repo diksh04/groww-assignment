@@ -1,4 +1,6 @@
-export const SearchResult = ({ name, symbol }) => {
+"use client"
+import React from "react";
+const SearchResult = ({ name, symbol }) => {
   console.log(name);
   return (
     <div
@@ -10,3 +12,5 @@ export const SearchResult = ({ name, symbol }) => {
     </div>
   );
 };
+
+export default SearchResult;
