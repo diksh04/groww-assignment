@@ -13,7 +13,7 @@ import { httpWrapper } from "../../lib/http";
 const TimeLine = ["1D", "1W", "1M", "3M", "6M", "1Y"];
 
 const Chart = ({ ticker }) => {
-  console.log(ticker);
+  // console.log(ticker);
 
   const [priceVariationList, setPriceVariationList] = useState([]);
   const [timeline, setTimeline] = useState("1D");
@@ -69,19 +69,8 @@ const Chart = ({ ticker }) => {
     }
   }, [templist]);
 
-  const fetchInitialList = async () => {
+  const fetchInitialList = (ticker, timeline) => {
     if (timeline === "1D") {
-      // httpWrapper.get("/query", {
-      //   function: "TIME_SERIES_INTRADAY",
-      //   symbol: ticker,
-      //   interval: "5min",
-      // });
-
-      // if (data["Time Series (5min)"]) {
-      //   setTemplist(data["Time Series (5min)"]);
-      // } else {
-      //   setLoadState("Error in fetching data");
-      // }
       httpWrapper
         .get("/query", {
           function: "TIME_SERIES_INTRADAY",
@@ -91,23 +80,13 @@ const Chart = ({ ticker }) => {
         .then((data) => {
           if (data["Time Series (5min)"]) {
             setTemplist(data["Time Series (5min)"]);
+            // console.log(templist);
           }
         })
         .catch((err) => {
           setLoadState("Error in fetching data");
         });
     } else {
-      // const data = await httpWrapper.get("/query", {
-      //   function: "TIME_SERIES_DAILY",
-      //   symbol: ticker,
-      //   outputsize: "full",
-      // });
-
-      // if (data["Time Series (Daily)"]) {
-      //   setTemplist(data["Time Series (Daily)"]);
-      // } else {
-      //   setLoadState("Error in fetching data");
-      // }
       httpWrapper
         .get("/query", {
           function: "TIME_SERIES_DAILY",
@@ -131,8 +110,10 @@ const Chart = ({ ticker }) => {
 
   useEffect(() => {
     setLoadState("Loading");
-    fetchInitialList();
-  }, [timeline]);
+    if (ticker && timeline) {
+      fetchInitialList(ticker, timeline);
+    }
+  }, [timeline, ticker]);
 
   return (
     <div className=" mt-4 mx-auto flex flex-col items-center gap-2 ">

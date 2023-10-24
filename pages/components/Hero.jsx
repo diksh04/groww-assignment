@@ -72,7 +72,7 @@ const Hero = () => {
         function: "TOP_GAINERS_LOSERS",
       })
       .then((data) => {
-        setItems(data.top_gainers);
+        setItems(data.top_losers);
         setApiToShow("top_losers");
       })
       .catch((err) => {

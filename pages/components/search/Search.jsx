@@ -4,13 +4,12 @@ import { useState } from "react";
 import SearchBar from "./SearchBar";
 import SearchResultsList from "./SearchResultList";
 const Search = () => {
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(null);
 
   return (
     <div>
-
-      <SearchBar setResults={setResults}/>
-      {results && <SearchResultsList results={results} />}
+      <SearchBar setResults={setResults} />
+      {results  && <SearchResultsList results={results} />}
     </div>
   );
 };
