@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import { httpWrapper } from "../utils/http";
 
 const IMAGES = [
   {
@@ -43,42 +46,38 @@ const IMAGES = [
       "https://logovtor.com/wp-content/uploads/2021/03/grow-com-logo-vector.png",
   },
 ];
-const url =
-  "https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=demo";
-  const apikey = "9L3KOTE41H6TZS5Z";
 
 const Hero = () => {
   const [items, setItems] = useState([]);
   const [apiTosShow, setApiToShow] = useState("top_gainers");
-  const [color, setColor] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleTopGainData = async () => {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        console.log("status", response.status);
-      }
-      const data = await response.json();
-      console.log(data);
-      setItems(data.top_gainers);
-      setApiToShow("top_gainers");
-    } catch (error) {
-      await handleFetchData();
-    }
+    httpWrapper
+      .get("/query", {
+        function: "TOP_GAINERS_LOSERS",
+      })
+      .then((data) => {
+        setItems(data.top_gainers);
+        setApiToShow("top_gainers");
+      })
+      .catch((err) => {
+        setError("Error in fetching data");
+      });
   };
+
   const handleTopLoserData = async () => {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        console.log("status", response.status);
-      }
-      const data = await response.json();
-      console.log(data);
-      setItems(data.top_losers);
-      setApiToShow("top_losers");
-    } catch (error) {
-      await handleFetchData();
-    }
+    httpWrapper
+      .get("/query", {
+        function: "TOP_GAINERS_LOSERS",
+      })
+      .then((data) => {
+        setItems(data.top_gainers);
+        setApiToShow("top_losers");
+      })
+      .catch((err) => {
+        setError("Error in fetching data");
+      });
   };
 
   useEffect(() => {
@@ -92,8 +91,8 @@ const Hero = () => {
     handleTopLoserData();
   };
   return (
-    <div className="mt-20 absolute top-0 z-0">
-      <div className="ml-20  ">
+    <div className="mt-40 absolute top-0 z-0 w-[100%]  ">
+      <div className=" flex justify-center">
         <button
           className={`mr-4 p-3 text-lg border-2 font-bold bg-amber-800 hover:bg-amber-600 text-white border-none rounded-lg`}
           onClick={showTopGainerHandler}
@@ -115,7 +114,7 @@ const Hero = () => {
             return (
               <Card
                 key={idx}
-                image={IMAGES[ idx % IMAGES.length].imageURL}
+                image={IMAGES[idx % IMAGES.length].imageURL}
                 title={item.ticker}
                 shareprice={item.price}
                 shareIncDec={item.change_amount}
@@ -135,10 +134,10 @@ const Hero = () => {
               />
             );
           })}
+
+        {error && <div className="text-red-500 text-center">{error}</div>}
       </div>
-    
     </div>
-    
   );
 };
 

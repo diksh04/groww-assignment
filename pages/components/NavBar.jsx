@@ -4,15 +4,14 @@ import Search from "./search/Search";
 import Link from "next/link";
 const NavBar = () => {
   return (
-    <div>
-      <div className="bg-amber-900 h-15 p-4  z-0">
-        <nav className="container px-4 mx-auto flex items-center justify-between ">
-          <div className="text-3xl font-bold sm:text-3xl text-white">
-            <Link href="/">GrowwStonks</Link>
-          </div>
-        </nav>
-      </div>
-      <div className="z-20 flex justify-end mt-[-55px] mr-10">
+    <div className="flex flex-col items-center  w-full flex-wrap bg-amber-900 p-4 gap-4 md:flex-row md:justify-between  ">
+      <nav className=" px-4  flex justify-start ">
+        <div className="text-3xl font-bold sm:text-3xl text-white">
+          <Link href="/">GrowwStonks</Link>
+        </div>
+      </nav>
+
+      <div className="flex justify-center">
         <Search />
       </div>
     </div>
