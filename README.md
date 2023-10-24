@@ -1,40 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Application is created using NextJs.
 
-## Getting Started
+App contains mainly two pages:
+1. Explore page: A page with Top gainers and Losers section.These
+two are in tabs. Each section contains a grid of cards (20 in numbers
+and a CTA to load more) that shows information about stocks/etfs.
+When this card is clicked it should route the user to the product page
+of the same stocks/etfs.
 
-First, run the development server:
+2. Product Page: A page of stocks/etfs showing basic information about
+it and line graph of prices.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Each page contains a common header showing application name and
+a search bar.
+- This search bar should show suggested stocks when user types in it.
+- DATA API
+- All the required data could be fetched from API endpoint provided by
+https://www.alphavantage.co. Go through the documentation for more
+details.
+These endpoints can be used for all the required data:
+● Alpha Intelligence -> Top Gainers & losers
+● Fundamental data -> Company overview
+● Core stocks APIs -> Ticker search
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  here is the final Implementation of project
+  <img width="949" alt="image" src="https://github.com/diksh04/groww-assignment/assets/84238934/71688366-ba34-4083-93a3-e392afbd0598">
+  <img width="946" alt="image" src="https://github.com/diksh04/groww-assignment/assets/84238934/65278b9f-dec8-45d1-9fa4-647c589429e2">
+  <img width="947" alt="image" src="https://github.com/diksh04/groww-assignment/assets/84238934/2f58d8c9-be5b-43b7-87f5-0193f44a6825">
