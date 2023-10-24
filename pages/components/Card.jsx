@@ -8,7 +8,7 @@ const Card = ({ image, title, shareprice, shareIncDec }) => {
 
   return (
     <Link href={`/product/${title}`}>
-      <div className="shadow-xl m-5 w-60 p-2 rounded hover:scale-95 flex flex-col hover:cursor-pointer h-[370px]">
+      <div className=" m-5 w-60 p-2 rounded hover:scale-95 flex flex-col hover:cursor-pointer h-[370px] shadow-2xl">
         <div className="h-[70%]">
           <Image
             loader={() => image}

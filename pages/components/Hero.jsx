@@ -91,10 +91,10 @@ const Hero = () => {
     handleTopLoserData();
   };
   return (
-    <div className="mt-40 absolute top-0 z-0 w-[100%]  ">
+    <div className="mt-[190px] absolute top-0 z-0 w-[100%]  ">
       <div className=" flex justify-center">
         <button
-          className={`mr-4 p-3 text-lg border-2 font-bold bg-amber-800 hover:bg-amber-600 text-white border-none rounded-lg`}
+          className={`mr-4 p-3 text-lg border-2 font-bold bg-amber-800 hover:bg-amber-600 text-white border-none rounded-lg `}
           onClick={showTopGainerHandler}
         >
           Top Gainers

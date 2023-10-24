@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React from "react";
 const SearchResult = ({ name, symbol }) => {
-  console.log(name);
+  // console.log(name);
 
   return (
     <Link href={`/product/${symbol}`}>

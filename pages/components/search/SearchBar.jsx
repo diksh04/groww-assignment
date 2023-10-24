@@ -31,7 +31,7 @@ const SearchBar = ({ setResults }) => {
     return () => {
       clearTimeout(timeId);
     };
-  }, [search, fetchData]);
+  }, [search,fetchData]);
   return (
     <div className="input-wrapper md:w-[450px]">
       <FaSearch id="search-icon" />
