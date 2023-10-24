@@ -26,12 +26,17 @@ const SearchBar = ({ setResults }) => {
   };
   useEffect(() => {
     let timeId = setTimeout(() => {
+      // if (search.length === 0) return setResults([]);
       fetchData(search);
+      // if (search === "") {
+      //   setResults([]);
+      //   return;
+      // }
     }, 1000);
     return () => {
       clearTimeout(timeId);
     };
-  }, [search,fetchData]);
+  }, [search, fetchData]);
   return (
     <div className="input-wrapper md:w-[450px]">
       <FaSearch id="search-icon" />
