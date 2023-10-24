@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FaSearch } from "react-icons/fa";
-import { httpWrapper } from "@/pages/utils/http";
+import { httpWrapper } from "@/lib/http";
 // 9L3KOTE41H6TZS5Z
 // 0AMS86IZ4NS5Y1D6
 const SearchBar = ({ setResults }) => {

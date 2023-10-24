@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { BiSolidDownArrow } from "react-icons/bi";
-import { httpWrapper } from "../utils/http";
+import { httpWrapper } from "../../lib/http";
 import NavBar from "../components/NavBar";
 import Chart from "../components/Chart";
 

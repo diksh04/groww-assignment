@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { httpWrapper } from "../utils/http";
+import { httpWrapper } from "../../lib/http";
 
 const TimeLine = ["1D", "1W", "1M", "3M", "6M", "1Y"];
 

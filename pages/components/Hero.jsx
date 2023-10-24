@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import { httpWrapper } from "../utils/http";
+import { httpWrapper } from "../../lib/http";
 
 const IMAGES = [
   {
