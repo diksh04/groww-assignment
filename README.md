@@ -1,4 +1,4 @@
-Application is created using NextJs.
+Application is created using NextJs and Alpha Intelligence Api.
 
 App contains mainly two pages:
 1. Explore page: A page with Top gainers and Losers section.These
